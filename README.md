@@ -25,5 +25,4 @@ key 's' for save drawing
 ![hand gestures](https://github.com/Zavier-SE/Painting_Board/blob/master/instruction.png)
 
 
-Go create your art!
 Enjoy!
