@@ -42,6 +42,10 @@ void noSDraw(){
       default:   break;
     
       }
+      
+      //drawingBoard.save("TEMP/screen" + draw + ".png");
+      //MAXdraw = draw;
+      //draw = draw + 1;
     
 }
 
@@ -106,6 +110,10 @@ void twoSDraw(){
       default:   break;
       
     }
+    
+    //drawingBoard.save("TEMP/screen" + draw + ".png");
+    //MAXdraw = draw;
+    //draw = draw + 1;
     
 }
 
@@ -216,4 +224,8 @@ void fourSDraw(){
                  
       default:   break;
       }
+      
+      //drawingBoard.save("TEMP/screen" + draw + ".png");
+      //MAXdraw = draw;
+      //draw = draw + 1;
 }

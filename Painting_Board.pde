@@ -1,6 +1,10 @@
 float lineWeight = 5;
 int cursorId = 0;
+//int draw = 0;
+//int MAXdraw;
+PImage load;
 PImage cursorPhoto;
+PImage instruction;
 PGraphics drawingBoard;
 PGraphics cursorBoard;
 PGraphics menuButton;
@@ -16,6 +20,11 @@ void setup(){
   bgm();
   noCursor();
   
+  //==========INSTRUCTION SHEET SETTING==========
+  instruction = loadImage("instruction.png");
+  instruction.resize(width,height);
+  
+  
   //size(500,500);
   background(0);
   frameRate(1000);
@@ -27,7 +36,7 @@ void setup(){
   init = true;
   oldPos = new ArrayList<PVector>();
   lastPos = new PVector(0,0);
-  currentPos = new PVector();
+  currentPos = new PVector(-1,-1);
   
   leap = new LeapMotion(this);
   
@@ -60,7 +69,7 @@ void setup(){
 void draw(){
   drawCursor();
   updateMenuOpen();
-  updateMenuStatus();
+  updateUserInterface();
   updateBrushColor();
   updateMenu();
   
@@ -84,6 +93,23 @@ void draw(){
     }else if(key == 's'){
       drawingBoard.save("Save/paint.png");
     }
+    //}else if(key == 'u'){
+    //  if(draw > 1){
+    //    draw = draw-2;
+    //    load = loadImage("TEMP/screen" + draw + ".png");
+    //    drawingBoard.beginDraw();
+    //    drawingBoard.image(load,0,0);
+    //    drawingBoard.endDraw();
+    //  }
+    //}else if(key == 'r'){
+    //  if(draw < MAXdraw){
+    //    draw = draw+1;
+    //    load = loadImage("TEMP/screen" + draw + ".png");
+    //    drawingBoard.beginDraw();
+    //    drawingBoard.image(load,0,0);
+    //    drawingBoard.endDraw();
+    //  }
+    //}
   }
   
 }
@@ -129,17 +155,27 @@ void drawCursor() {
   }
 }
 
-void updateMenuStatus(){
+void updateUserInterface(){
     if (menuOpen == true ) {
     image(drawingBoard,0,0);
     image(menuButton,width/2,height/2.25);
     image(menu,0,0);
     image(cursorBoard,0,0);
   } else {
-    image(menu,0,0);
-    image(drawingBoard,0,0);
-    image(menuButton,0,height/2.25);
-    image(cursorBoard,0,0);
+    if (currentPos.x == -1 && currentPos.y == -1){
+      image(menu,0,0);
+      image(drawingBoard,0,0);
+      image(menuButton,0,height/2.25);
+      image(cursorBoard,0,0);
+      tint(255, 200);
+      image(instruction,0,0);
+      noTint();
+    }else{
+      image(menu,0,0);
+      image(drawingBoard,0,0);
+      image(menuButton,0,height/2.25);
+      image(cursorBoard,0,0);
+    }
   }
 }
 
