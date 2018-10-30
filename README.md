@@ -22,7 +22,7 @@ key 's' for save drawing
 
 ### Hand Gesture Usage (Leap Motion control)
 
-![hand gestures](https://github.com/Zavier-SE/Painting_Board/blob/master/instruction.png)
+![hand gestures](https://github.com/Zavier-SE/Painting_Board/blob/master/data/instruction.png)
 
 
 Enjoy!
