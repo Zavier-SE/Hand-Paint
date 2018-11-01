@@ -1,6 +1,7 @@
 # Hand Paint
 
 Hand Paint is a small project where users can use Leap Motion as a controller to draw on the screen.
+
 This is a project developed in 31080 Interactive Media UTS
 
 ## Before start
